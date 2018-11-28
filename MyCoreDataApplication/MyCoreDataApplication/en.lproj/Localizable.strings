@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  MyCoreDataApplication
+
+  Created by Clemens Stift on 28.11.18.
+  Copyright © 2018 Clemens Stift. All rights reserved.
+*/
+
+"TaskList-Title" = "Tasks";
+"AddTask-Title" = "New Taks";
+"AddTask-FlavorText" = "What is there to do? 👉";
+"AddTask-AddButtonTitle" = "Add";
