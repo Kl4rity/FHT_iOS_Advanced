@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  MyCoreDataApplication
+
+  Created by Clemens Stift on 28.11.18.
+  Copyright © 2018 Clemens Stift. All rights reserved.
+*/
+
+"PlayerList-Title" = "Players";
+"AddPlayer-Title" = "New Player";
+"AddPlayer-FlavorText" = "Who is your new opponent? 👉";
+"AddPlayer-AddButtonTitle" = "Add";

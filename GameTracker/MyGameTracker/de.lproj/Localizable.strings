@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  MyCoreDataApplication
+
+  Created by Clemens Stift on 28.11.18.
+  Copyright © 2018 Clemens Stift. All rights reserved.
+*/
+
+"TaskList-Title" = "Spieler";
+"AddTask-Title" = "Neuer Spieler";
+"AddTask-FlavorText" = "Wer ist der neue Gegner? 👉";
+"AddTask-AddButtonTitle" = "Hinzufügen";
