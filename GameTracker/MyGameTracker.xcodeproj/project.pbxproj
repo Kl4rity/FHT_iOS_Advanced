@@ -8,23 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		7E6F59E021AEDB9200ED1697 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6F59DF21AEDB9200ED1697 /* AppDelegate.swift */; };
-		7E6F59E221AEDB9200ED1697 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6F59E121AEDB9200ED1697 /* TaskViewController.swift */; };
+		7E6F59E221AEDB9200ED1697 /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6F59E121AEDB9200ED1697 /* PlayersViewController.swift */; };
 		7E6F59E521AEDB9200ED1697 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E6F59E321AEDB9200ED1697 /* Main.storyboard */; };
-		7E6F59E821AEDB9200ED1697 /* MyGameTrackerApplication.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7E6F59E621AEDB9200ED1697 /* MyGameTrackerApplication.xcdatamodeld */; };
 		7E6F59EA21AEDB9400ED1697 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E6F59E921AEDB9400ED1697 /* Assets.xcassets */; };
 		7E6F59ED21AEDB9400ED1697 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E6F59EB21AEDB9400ED1697 /* LaunchScreen.storyboard */; };
 		7E6F59F821AEDBC300ED1697 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E6F59FA21AEDBC300ED1697 /* Localizable.strings */; };
-		7E6F59FD21AEE3FD00ED1697 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6F59FC21AEE3FD00ED1697 /* AddTaskViewController.swift */; };
+		7E6F59FD21AEE3FD00ED1697 /* AddPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6F59FC21AEE3FD00ED1697 /* AddPlayerViewController.swift */; };
 		7E6F59FF21AEF71C00ED1697 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6F59FE21AEF71C00ED1697 /* PlayerCell.swift */; };
+		7EA2AE1A21B7DFFB00FA81D2 /* MyGameTrackerApplication.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7EA2AE1821B7DFFB00FA81D2 /* MyGameTrackerApplication.xcdatamodeld */; };
+		7EA2AE1C21B7ED3900FA81D2 /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA2AE1B21B7ED3900FA81D2 /* GamesViewController.swift */; };
+		7EA2AE1E21B7EE1200FA81D2 /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA2AE1D21B7EE1200FA81D2 /* GameCell.swift */; };
+		7EA2AE2021B8026100FA81D2 /* AddGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA2AE1F21B8026100FA81D2 /* AddGameViewController.swift */; };
 		7EB1F4FA21B6FE1D00D69E11 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EB1F4F921B6FE1D00D69E11 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7E6F59DC21AEDB9200ED1697 /* MyGameTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyGameTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E6F59DF21AEDB9200ED1697 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7E6F59E121AEDB9200ED1697 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		7E6F59E121AEDB9200ED1697 /* PlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
 		7E6F59E421AEDB9200ED1697 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7E6F59E721AEDB9200ED1697 /*  */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodeld; name = ""; sourceTree = "<group>"; };
 		7E6F59E921AEDB9400ED1697 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E6F59EC21AEDB9400ED1697 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E6F59EE21AEDB9400ED1697 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,8 +34,12 @@
 		7E6F59F521AEDBA900ED1697 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		7E6F59F921AEDBC300ED1697 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7E6F59FB21AEDBC700ED1697 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		7E6F59FC21AEE3FD00ED1697 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		7E6F59FC21AEE3FD00ED1697 /* AddPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerViewController.swift; sourceTree = "<group>"; };
 		7E6F59FE21AEF71C00ED1697 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
+		7EA2AE1921B7DFFB00FA81D2 /* MyGameTrackerApplication.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyGameTrackerApplication.xcdatamodel; sourceTree = "<group>"; };
+		7EA2AE1B21B7ED3900FA81D2 /* GamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
+		7EA2AE1D21B7EE1200FA81D2 /* GameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
+		7EA2AE1F21B8026100FA81D2 /* AddGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGameViewController.swift; sourceTree = "<group>"; };
 		7EB1F4F921B6FE1D00D69E11 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,6 +57,7 @@
 		7E6F59D321AEDB9200ED1697 = {
 			isa = PBXGroup;
 			children = (
+				7EA2AE1821B7DFFB00FA81D2 /* MyGameTrackerApplication.xcdatamodeld */,
 				7EB1F4F921B6FE1D00D69E11 /* Default-568h@2x.png */,
 				7E6F59FA21AEDBC300ED1697 /* Localizable.strings */,
 				7E6F59DE21AEDB9200ED1697 /* MyGameTracker */,
@@ -69,15 +76,17 @@
 		7E6F59DE21AEDB9200ED1697 /* MyGameTracker */ = {
 			isa = PBXGroup;
 			children = (
-				7E6F59FC21AEE3FD00ED1697 /* AddTaskViewController.swift */,
+				7E6F59FC21AEE3FD00ED1697 /* AddPlayerViewController.swift */,
 				7E6F59FE21AEF71C00ED1697 /* PlayerCell.swift */,
 				7E6F59DF21AEDB9200ED1697 /* AppDelegate.swift */,
-				7E6F59E121AEDB9200ED1697 /* TaskViewController.swift */,
+				7E6F59E121AEDB9200ED1697 /* PlayersViewController.swift */,
+				7EA2AE1B21B7ED3900FA81D2 /* GamesViewController.swift */,
+				7EA2AE1D21B7EE1200FA81D2 /* GameCell.swift */,
 				7E6F59E321AEDB9200ED1697 /* Main.storyboard */,
+				7EA2AE1F21B8026100FA81D2 /* AddGameViewController.swift */,
 				7E6F59E921AEDB9400ED1697 /* Assets.xcassets */,
 				7E6F59EB21AEDB9400ED1697 /* LaunchScreen.storyboard */,
 				7E6F59EE21AEDB9400ED1697 /* Info.plist */,
-				7E6F59E621AEDB9200ED1697 /* MyGameTrackerApplication.xcdatamodeld */,
 			);
 			path = MyGameTracker;
 			sourceTree = "<group>";
@@ -156,11 +165,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E6F59E821AEDB9200ED1697 /* MyGameTrackerApplication.xcdatamodeld in Sources */,
-				7E6F59FD21AEE3FD00ED1697 /* AddTaskViewController.swift in Sources */,
-				7E6F59E221AEDB9200ED1697 /* TaskViewController.swift in Sources */,
+				7EA2AE2021B8026100FA81D2 /* AddGameViewController.swift in Sources */,
+				7E6F59FD21AEE3FD00ED1697 /* AddPlayerViewController.swift in Sources */,
+				7E6F59E221AEDB9200ED1697 /* PlayersViewController.swift in Sources */,
 				7E6F59E021AEDB9200ED1697 /* AppDelegate.swift in Sources */,
 				7E6F59FF21AEF71C00ED1697 /* PlayerCell.swift in Sources */,
+				7EA2AE1C21B7ED3900FA81D2 /* GamesViewController.swift in Sources */,
+				7EA2AE1A21B7DFFB00FA81D2 /* MyGameTrackerApplication.xcdatamodeld in Sources */,
+				7EA2AE1E21B7EE1200FA81D2 /* GameCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,13 +388,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		7E6F59E621AEDB9200ED1697 /* MyGameTrackerApplication.xcdatamodeld */ = {
+		7EA2AE1821B7DFFB00FA81D2 /* MyGameTrackerApplication.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				7E6F59E721AEDB9200ED1697 /*  */,
+				7EA2AE1921B7DFFB00FA81D2 /* MyGameTrackerApplication.xcdatamodel */,
 			);
-			currentVersion = 7E6F59E721AEDB9200ED1697 /*  */;
-			path = MyGameTrackerApplication.xcdatamodeld;
+			currentVersion = 7EA2AE1921B7DFFB00FA81D2 /* MyGameTrackerApplication.xcdatamodel */;
+			name = MyGameTrackerApplication.xcdatamodeld;
+			path = MyGameTracker/MyGameTrackerApplication.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
