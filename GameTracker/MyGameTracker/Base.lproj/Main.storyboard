@@ -13,7 +13,7 @@
         <!--RootViewController-->
         <scene sceneID="kah-pY-3hK">
             <objects>
-                <tableViewController id="NWm-Ho-yXP" customClass="TaskViewController" customModule="MyGameTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="NWm-Ho-yXP" customClass="PlayersViewController" customModule="MyGameTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Evv-zB-2Zf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,7 +38,7 @@
                                 <accessibility key="accessibilityConfiguration" identifier="TaskCell"/>
                                 <connections>
                                     <outlet property="itemText" destination="jfm-a0-fTi" id="8dZ-bK-rFP"/>
-                                    <segue destination="yYc-AD-v5B" kind="show" id="Zti-mk-iZn"/>
+                                    <segue destination="yYc-AD-v5B" kind="show" identifier="playerSelected" id="Zti-mk-iZn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -59,22 +59,50 @@
             </objects>
             <point key="canvasLocation" x="-18.399999999999999" y="-354.87256371814095"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="8o6-qX-M4s">
+            <objects>
+                <navigationController id="hJl-ND-c7M" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Knb-uw-eGM">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="yYc-AD-v5B" kind="relationship" relationship="rootViewController" id="WIP-5o-dNZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wBd-qG-szT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="268" y="528"/>
+        </scene>
+        <!--Games View Controller-->
         <scene sceneID="lO9-Qn-WcH">
             <objects>
-                <tableViewController id="yYc-AD-v5B" sceneMemberID="viewController">
+                <tableViewController id="yYc-AD-v5B" customClass="GamesViewController" customModule="MyGameTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bHa-g2-cZV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Rdl-8G-CdP">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameCell" id="Rdl-8G-CdP" customClass="GameCell" customModule="MyGameTracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rdl-8G-CdP" id="dS6-IZ-qJh">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATW-p2-qdi">
+                                            <rect key="frame" x="16" y="11" width="330" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleField" destination="ATW-p2-qdi" id="kAN-g9-X4o"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -82,42 +110,83 @@
                             <outlet property="delegate" destination="yYc-AD-v5B" id="AoB-gj-fg1"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="lqk-nk-e8o">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Uxx-aN-ZSI">
+                            <connections>
+                                <segue destination="u7P-kg-0mJ" kind="show" identifier="addGameToPlayer" id="Y1s-ms-gvs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bcT-8R-IiQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="985" y="-85"/>
+            <point key="canvasLocation" x="985" y="-74"/>
         </scene>
-        <!--Add Task View Controller-->
+        <!--Add Game View Controller-->
+        <scene sceneID="HJM-te-R3N">
+            <objects>
+                <viewController id="u7P-kg-0mJ" customClass="AddGameViewController" customModule="MyGameTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Pv-Sa-PsX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nVE-5T-BlX">
+                                <rect key="frame" x="0.0" y="64" width="375" height="216"/>
+                            </pickerView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yza-ct-rCq">
+                                <rect key="frame" x="16" y="288" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wp6-bv-Ed9">
+                                <rect key="frame" x="16" y="326" width="343" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="addGame:" destination="u7P-kg-0mJ" eventType="touchUpInside" id="tZE-cP-Iyl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yza-ct-rCq" firstAttribute="leading" secondItem="WgA-Mm-MlL" secondAttribute="leading" constant="16" id="9Wz-0Y-swQ"/>
+                            <constraint firstItem="Wp6-bv-Ed9" firstAttribute="leading" secondItem="WgA-Mm-MlL" secondAttribute="leading" constant="16" id="QTB-q0-jrj"/>
+                            <constraint firstItem="nVE-5T-BlX" firstAttribute="trailing" secondItem="WgA-Mm-MlL" secondAttribute="trailing" id="TBu-hM-HHI"/>
+                            <constraint firstItem="nVE-5T-BlX" firstAttribute="leading" secondItem="WgA-Mm-MlL" secondAttribute="leading" id="cd9-2D-S8y"/>
+                            <constraint firstItem="WgA-Mm-MlL" firstAttribute="trailing" secondItem="yza-ct-rCq" secondAttribute="trailing" constant="16" id="rpj-IP-8iR"/>
+                            <constraint firstItem="Wp6-bv-Ed9" firstAttribute="top" secondItem="yza-ct-rCq" secondAttribute="bottom" constant="8" id="uZe-mc-drs"/>
+                            <constraint firstItem="WgA-Mm-MlL" firstAttribute="trailing" secondItem="Wp6-bv-Ed9" secondAttribute="trailing" constant="16" id="xO2-sU-UYy"/>
+                            <constraint firstItem="nVE-5T-BlX" firstAttribute="top" secondItem="WgA-Mm-MlL" secondAttribute="top" id="zTH-zb-Ja1"/>
+                            <constraint firstItem="yza-ct-rCq" firstAttribute="top" secondItem="nVE-5T-BlX" secondAttribute="bottom" constant="8" id="zwx-No-BbV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WgA-Mm-MlL"/>
+                    </view>
+                    <connections>
+                        <outlet property="addGameButton" destination="Wp6-bv-Ed9" id="kVS-Pm-kOW"/>
+                        <outlet property="addGameTextField" destination="yza-ct-rCq" id="Hda-dt-dv1"/>
+                        <outlet property="gamePicker" destination="nVE-5T-BlX" id="XnN-Qa-D6b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oze-mk-r7J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1800.8" y="-803.74812593703155"/>
+        </scene>
+        <!--Add Player View Controller-->
         <scene sceneID="nU6-ul-ebe">
             <objects>
-                <viewController id="bs4-nQ-mr5" customClass="AddTaskViewController" customModule="MyGameTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bs4-nQ-mr5" customClass="AddPlayerViewController" customModule="MyGameTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1l5-1C-ZHS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhc-PX-UdX">
-                                <rect key="frame" x="72" y="286" width="226" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="226" id="WBa-ol-UHh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Kc-dY-uig">
-                                <rect key="frame" x="72" y="318" width="226" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="226" id="kde-Ml-p0M"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="82" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gM-oR-kud">
-                                <rect key="frame" x="72" y="356" width="226" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="226" id="R7K-ho-INd"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="120" width="343" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="addTask:" destination="bs4-nQ-mr5" eventType="touchUpInside" id="kCc-i1-1bX"/>
@@ -126,28 +195,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="7gM-oR-kud" firstAttribute="top" secondItem="6Kc-dY-uig" secondAttribute="bottom" constant="8" id="1y0-Qz-ffx"/>
-                            <constraint firstItem="7gM-oR-kud" firstAttribute="leading" secondItem="eGS-Wd-DiK" secondAttribute="leading" constant="72" id="5mc-3h-2KI"/>
-                            <constraint firstItem="6Kc-dY-uig" firstAttribute="leading" secondItem="eGS-Wd-DiK" secondAttribute="leading" constant="72" id="BGG-cn-ciT"/>
-                            <constraint firstItem="eGS-Wd-DiK" firstAttribute="trailing" secondItem="7gM-oR-kud" secondAttribute="trailing" constant="77" id="Dkj-Bp-w4Y"/>
-                            <constraint firstItem="6Kc-dY-uig" firstAttribute="top" secondItem="hhc-PX-UdX" secondAttribute="bottom" constant="11" id="E0i-z9-Sc6"/>
-                            <constraint firstItem="eGS-Wd-DiK" firstAttribute="trailing" secondItem="6Kc-dY-uig" secondAttribute="trailing" constant="77" id="R4B-pQ-kgt"/>
-                            <constraint firstItem="eGS-Wd-DiK" firstAttribute="trailing" secondItem="hhc-PX-UdX" secondAttribute="trailing" constant="77" id="Xh7-wJ-aLO"/>
-                            <constraint firstItem="hhc-PX-UdX" firstAttribute="leading" secondItem="eGS-Wd-DiK" secondAttribute="leading" constant="72" id="fDL-Le-3hP"/>
-                            <constraint firstItem="hhc-PX-UdX" firstAttribute="top" secondItem="eGS-Wd-DiK" secondAttribute="top" constant="222" id="xl2-hG-e5A"/>
+                            <constraint firstItem="eGS-Wd-DiK" firstAttribute="trailing" secondItem="6Kc-dY-uig" secondAttribute="trailing" constant="16" id="V7b-pk-DoP"/>
+                            <constraint firstItem="eGS-Wd-DiK" firstAttribute="trailing" secondItem="7gM-oR-kud" secondAttribute="trailing" constant="16" id="Xp5-kG-LkI"/>
+                            <constraint firstItem="7gM-oR-kud" firstAttribute="leading" secondItem="eGS-Wd-DiK" secondAttribute="leading" constant="16" id="YgN-Ob-sKp"/>
+                            <constraint firstItem="7gM-oR-kud" firstAttribute="top" secondItem="6Kc-dY-uig" secondAttribute="bottom" constant="8" id="eGc-KH-3Db"/>
+                            <constraint firstItem="6Kc-dY-uig" firstAttribute="top" secondItem="eGS-Wd-DiK" secondAttribute="top" constant="18" id="fMa-Fm-8eI"/>
+                            <constraint firstItem="6Kc-dY-uig" firstAttribute="leading" secondItem="eGS-Wd-DiK" secondAttribute="leading" constant="16" id="qhP-Fg-1tf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eGS-Wd-DiK"/>
                     </view>
                     <navigationItem key="navigationItem" id="5FJ-oK-OkN"/>
                     <connections>
                         <outlet property="addButton" destination="7gM-oR-kud" id="a2h-oL-RGl"/>
-                        <outlet property="flavorTextLabel" destination="hhc-PX-UdX" id="2g2-ls-xro"/>
-                        <outlet property="taskTextField" destination="6Kc-dY-uig" id="uES-Ti-oAd"/>
+                        <outlet property="playerTextField" destination="6Kc-dY-uig" id="DyS-ZJ-uPn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YiZ-X4-ItT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="985" y="-802"/>
+            <point key="canvasLocation" x="984.79999999999995" y="-802.848575712144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oMU-f2-lhR">
@@ -166,4 +231,7 @@
             <point key="canvasLocation" x="-966" y="-354"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="WIP-5o-dNZ"/>
+    </inferredMetricsTieBreakers>
 </document>
