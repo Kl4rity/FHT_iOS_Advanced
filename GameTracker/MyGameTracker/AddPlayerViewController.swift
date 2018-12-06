@@ -10,10 +10,9 @@ import Foundation
 import UIKit
 import CoreData
 
-class AddTaskViewController: UIViewController {
+class AddPlayerViewController: UIViewController {
     
-    @IBOutlet weak var flavorTextLabel: UILabel!
-    @IBOutlet weak var taskTextField: UITextField!
+    @IBOutlet weak var playerTextField: UITextField!
     @IBOutlet weak var addButton: UIButton!
     
     var appDelegate : AppDelegate!
@@ -23,7 +22,6 @@ class AddTaskViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         navigationItem.title = NSLocalizedString("AddPlayer-Title", comment: "")
-        flavorTextLabel.text = NSLocalizedString("AddPlayer-FlavorText", comment: "")
         addButton.setTitle(NSLocalizedString("AddPlayer-AddButtonTitle", comment: "") , for: .normal)
         
         setUpCoreData()
@@ -37,8 +35,8 @@ class AddTaskViewController: UIViewController {
     @IBAction func addTask(_ sender: Any) {
         
         let taskEntity = NSEntityDescription.entity(forEntityName:"Player", in: managedContext)!
-        let task = NSManagedObject(entity: taskEntity, insertInto: managedContext)
-        task.setValue(taskTextField.text, forKeyPath: "name")
+        let player = NSManagedObject(entity: taskEntity, insertInto: managedContext)
+        player.setValue(playerTextField.text, forKeyPath: "name")
         
         do {
             try managedContext.save()
@@ -47,9 +45,7 @@ class AddTaskViewController: UIViewController {
             return
         }
         
-        taskTextField.text = ""
+        playerTextField.text = ""
     }
-    
-    
     
 }
