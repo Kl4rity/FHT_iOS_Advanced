@@ -15,7 +15,7 @@ class PlayersViewController: UITableViewController {
     var managedContext : NSManagedObjectContext!
     
     // Fetch the players
-    var players : Array<Any> = Array<Any>()
+    var players : Array<Player> = Array<Player>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,14 +36,14 @@ class PlayersViewController: UITableViewController {
     
     func fetchData(){
         let playerFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
-        players = try! managedContext.fetch(playerFetch)
+        players = try! managedContext.fetch(playerFetch) as! [Player]
         self.tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            let player = players[indexPath.row] as! Player
+            let player = players[indexPath.row]
             displayAlertView(playerToBeRemoved: player)
         }
     }
@@ -67,8 +67,8 @@ class PlayersViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "playerSelected"){
-            var viewController = segue.destination as! GamesViewController
-            var senderCell = sender as! PlayerCell
+            let viewController = segue.destination as! GamesViewController
+            let senderCell = sender as! PlayerCell
             viewController.playerName = senderCell.itemText.text
         }
     }
@@ -85,7 +85,7 @@ class PlayersViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerCell", for: indexPath) as! PlayerCell
         
         let player = players[indexPath.row]
-        cell.player = player as? Player
+        cell.player = player
         
         return cell
     }

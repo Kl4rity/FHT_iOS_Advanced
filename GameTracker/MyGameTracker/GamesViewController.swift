@@ -17,11 +17,10 @@ class GamesViewController : UITableViewController {
     var player : Player!
     
     // Fetch the games
-    var games : Array<Any> = Array<Any>()
+    var games : Array<Game> = Array<Game>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         navigationItem.title = NSLocalizedString("GameList-Title", comment: "")
 
         
@@ -37,8 +36,14 @@ class GamesViewController : UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "addGameToPlayer"){
-            var viewController = segue.destination as! AddGameViewController
+            let viewController = segue.destination as! AddGameViewController
             viewController.currentPlayerName = playerName
+        }
+        if(segue.identifier == "getMatchesForGame"){
+            let viewController = segue.destination as! MatchesViewController
+            let senderCell = sender as! GameCell
+            viewController.player = player
+            viewController.game = senderCell.game
         }
     }
     
@@ -52,8 +57,7 @@ class GamesViewController : UITableViewController {
     func fetchData(){
         games = [Game]()
         let gamesFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Game")
-//        gamesFetch.predicate = NSPredicate(format:"playedBy == %@", player)
-        var allGames = try! managedContext.fetch(gamesFetch) as! [Game]
+        let allGames = try! managedContext.fetch(gamesFetch) as! [Game]
         for game in allGames {
             let playerList = game.playedBy ?? NSSet()
             if (playerList.contains(player)){
@@ -66,7 +70,7 @@ class GamesViewController : UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            let game = games[indexPath.row] as! Game
+            let game = games[indexPath.row]
             displayAlertView(gameToBeRemoved: game, playerToBeRemovedFrom: player)
         }
     }
@@ -103,7 +107,7 @@ class GamesViewController : UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath) as! GameCell
         
         let game = games[indexPath.row]
-        cell.game = game as? Game
+        cell.game = game
         
         return cell
     }
