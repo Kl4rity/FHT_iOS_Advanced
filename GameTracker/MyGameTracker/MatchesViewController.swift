@@ -31,6 +31,10 @@ class MatchesViewController : UITableViewController {
         managedContext = appDelegate.persistentContainer.viewContext
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        fetchData()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "editExistingMatchOfGame"){
             let viewController = segue.destination as! AddEditMatchViewController
@@ -57,8 +61,7 @@ class MatchesViewController : UITableViewController {
 
         var matchesPlayedByPlayer = [Match]()
         for match in allMatches {
-            let playerList = game.playedBy ?? NSSet()
-            if (playerList.contains(player)){
+            if (match.opponent == player){
                 matchesPlayedByPlayer.append(match)
             }
         }
