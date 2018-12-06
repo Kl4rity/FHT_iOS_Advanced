@@ -7,6 +7,12 @@
 */
 
 "TaskList-Title" = "Spieler";
+
 "AddTask-Title" = "Neuer Spieler";
-"AddTask-FlavorText" = "Wer ist der neue Gegner? 👉";
 "AddTask-AddButtonTitle" = "Hinzufügen";
+
+"GameList-Title" = "Spiele";
+
+"AddGame-Title" = "Neues Spiel";
+"AddGame-AddButtonTitle" = "Neues Spiel hinzufügen";
+"AddGame-ConnectButtonTitle" = "Zu Spieler hinzufügen";

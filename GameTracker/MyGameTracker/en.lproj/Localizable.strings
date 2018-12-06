@@ -7,6 +7,13 @@
 */
 
 "PlayerList-Title" = "Players";
+
 "AddPlayer-Title" = "New Player";
-"AddPlayer-FlavorText" = "Who is your new opponent? 👉";
 "AddPlayer-AddButtonTitle" = "Add";
+
+"GameList-Title" = "Games";
+
+"AddGame-Title" = "Add Game";
+"AddGame-AddButtonTitle" = "Create New Game";
+"AddGame-ConnectButtonTitle" = "Add Game to Player";
+
