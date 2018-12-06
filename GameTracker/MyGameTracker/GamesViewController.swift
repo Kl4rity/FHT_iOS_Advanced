@@ -34,6 +34,10 @@ class GamesViewController : UITableViewController {
         managedContext = appDelegate.persistentContainer.viewContext
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        fetchData()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "addGameToPlayer"){
             let viewController = segue.destination as! AddGameViewController
