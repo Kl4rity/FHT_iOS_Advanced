@@ -31,12 +31,24 @@ class MatchesViewController : UITableViewController {
         managedContext = appDelegate.persistentContainer.viewContext
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if(segue.identifier == "addMatchToGame"){
-//            var viewController = segue.destination as! AddEditMatchViewController
-//            viewController.currentPlayerName = playerName
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "editExistingMatchOfGame"){
+            let viewController = segue.destination as! AddEditMatchViewController
+            let senderCell = sender as! MatchCell
+            viewController.selectedMatch = senderCell.match
+            viewController.isCreateNew = false
+            viewController.gamePlayed = game
+            viewController.oponentPlayed = player
+        }
+        
+        if(segue.identifier == "addNewMatchToGame"){
+            let viewController = segue.destination as! AddEditMatchViewController
+            viewController.isCreateNew = true
+            viewController.gamePlayed = game
+            viewController.oponentPlayed = player
+        }
+        
+    }
     
     func fetchData(){
         matches = [Match]()

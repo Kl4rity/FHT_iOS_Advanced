@@ -33,3 +33,10 @@
 
 "MatchCell-Won" = "Gewonnen";
 "MatchCell-Lost" = "Verloren";
+
+"AddEditMatch-Title" = "Match bearbeiten";
+"AddEditMatch-ScoreLabel" = "Endstand";
+"AddEditMatch-ScoreHomeLabel" = "Meine Punkte";
+"AddEditMatch-ScoreAwayLabel" = "Punkte Gegner";
+"AddEditMatch-SaveButtonLabel" = "Match speichern";
+"AddEditMatch-ProofButtonLabel" = "Beweisfoto hinzufügen";

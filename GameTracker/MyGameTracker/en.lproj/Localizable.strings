@@ -34,3 +34,8 @@
 "MatchCell-Won" = "Won";
 "MatchCell-Lost" = "Lost";
 
+"AddEditMatch-Title" = "Edit Match";
+"AddEditMatch-ScoreHomeLabel" = "My Score";
+"AddEditMatch-ScoreAwayLabel" = "Opp. Score";
+"AddEditMatch-SaveButtonLabel" = "Save match";
+"AddEditMatch-ProofButtonLabel" = "Add photographic proof";

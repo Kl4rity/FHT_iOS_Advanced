@@ -6,7 +6,6 @@
         <relationship name="playedBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Player" inverseName="plays" inverseEntity="Player" syncable="YES"/>
     </entity>
     <entity name="Match" representedClassName="Match" syncable="YES" codeGenerationType="class">
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="opponentScore" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="pictureProof" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="userScore" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -21,7 +20,7 @@
     </entity>
     <elements>
         <element name="Player" positionX="-289.53515625" positionY="-402.37890625" width="128" height="88"/>
-        <element name="Match" positionX="379.37890625" positionY="-538.9296875" width="128" height="148"/>
+        <element name="Match" positionX="379.37890625" positionY="-538.9296875" width="128" height="133"/>
         <element name="Game" positionX="56.52734375" positionY="-55.05078125" width="128" height="88"/>
     </elements>
 </model>

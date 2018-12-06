@@ -80,8 +80,6 @@ override func viewDidLoad() {
     }
     
     func connectPlayerToGame(playerName:String , gameName:String){
-//        let playerEntity = NSEntityDescription.entity(forEntityName:"Player", in: managedContext)!
-//        let gameEntity = NSEntityDescription.entity(forEntityName:"Game", in: managedContext)!
         
         // Fetch game
         let gameFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Game")
