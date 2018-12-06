@@ -102,7 +102,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="titleField" destination="ATW-p2-qdi" id="kAN-g9-X4o"/>
-                                    <segue destination="Shf-vJ-a7t" kind="show" id="AAD-hL-tik"/>
+                                    <segue destination="Shf-vJ-a7t" kind="show" identifier="getMatchesForGame" id="AAD-hL-tik"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -126,13 +126,13 @@
         <!--Root View Controller-->
         <scene sceneID="pbr-Gu-dtU">
             <objects>
-                <tableViewController id="Shf-vJ-a7t" sceneMemberID="viewController">
+                <tableViewController id="Shf-vJ-a7t" customClass="MatchesViewController" customModule="MyGameTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CP6-JP-0yk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="66" id="Ofm-Np-ljR">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MatchCell" rowHeight="66" id="Ofm-Np-ljR" customClass="MatchCell" customModule="MyGameTracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ofm-Np-ljR" id="UWp-uo-BFp">
@@ -163,7 +163,10 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="oqf-Zl-dNx" kind="show" id="QOz-d0-hXe"/>
+                                    <outlet property="dateField" destination="Ob2-Ys-kU7" id="eTV-Xo-ehy"/>
+                                    <outlet property="scoreField" destination="36j-L0-hsF" id="3MM-37-8Sf"/>
+                                    <outlet property="winnerNameField" destination="P58-t2-Oab" id="4RA-jY-lUy"/>
+                                    <segue destination="oqf-Zl-dNx" kind="show" identifier="addMatchToGame" id="QOz-d0-hXe"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -319,7 +322,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fYa-WA-CSn"/>
-        <segue reference="WIP-5o-dNZ"/>
+        <segue reference="AAD-hL-tik"/>
+        <segue reference="Zti-mk-iZn"/>
     </inferredMetricsTieBreakers>
 </document>
