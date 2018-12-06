@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class TaskViewController: UITableViewController {
+class PlayersViewController: UITableViewController {
     
     var appDelegate : AppDelegate!
     var managedContext : NSManagedObjectContext!
