@@ -24,3 +24,12 @@
 "AddGame-Title" = "Neues Spiel";
 "AddGame-AddButtonTitle" = "Neues Spiel hinzufügen";
 "AddGame-ConnectButtonTitle" = "Zu Spieler hinzufügen";
+
+"MatchList-Title" = "Matches";
+"MatchList-removeMatchTitle" = "Bist du sicher?";
+"MatchList-removeMatchMessage" = "Möchtest du dieses Match wirklich entfernen?";
+"MatchList-confirm" = "Ja";
+"MatchList-cancel" = "Nein";
+
+"MatchCell-Won" = "Gewonnen";
+"MatchCell-Lost" = "Verloren";

@@ -25,3 +25,12 @@
 "AddGame-AddButtonTitle" = "Create New Game";
 "AddGame-ConnectButtonTitle" = "Add Game to Player";
 
+"MatchList-Title" = "Matches";
+"MatchList-removeMatchTitle" = "Are you sure?";
+"MatchList-removeMatchMessage" = "Do you really want to remove this match?";
+"MatchList-confirm" = "Yes";
+"MatchList-cancel" = "No";
+
+"MatchCell-Won" = "Won";
+"MatchCell-Lost" = "Lost";
+
