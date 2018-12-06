@@ -45,7 +45,7 @@ class AddPlayerViewController: UIViewController {
             return
         }
         
-        playerTextField.text = ""
+        navigationController?.popViewController(animated: true)
     }
     
 }
