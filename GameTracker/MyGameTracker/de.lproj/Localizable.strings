@@ -6,12 +6,20 @@
   Copyright © 2018 Clemens Stift. All rights reserved.
 */
 
-"TaskList-Title" = "Spieler";
+"PlayerList-Title" = "Spieler";
+"PlayerList-removePlayerTitle" = "Bist du sicher?";
+"PlayerList-removePlayerMessage" = "Möchtest du diesen Spieler wirklich entfernen?";
+"PlayerList-confirm" = "Ja";
+"PlayerList-cancel" = "Nein";
 
-"AddTask-Title" = "Neuer Spieler";
-"AddTask-AddButtonTitle" = "Hinzufügen";
+"AddPlayer-Title" = "Neuer Spieler";
+"AddPlayer-AddButtonTitle" = "Hinzufügen";
 
 "GameList-Title" = "Spiele";
+"GameList-removeGameTitle" = "Bist du sicher?";
+"GameList-removeGameMessage" = "Möchtest du dieses Spiel wirklich von dem Spieler entfernen?";
+"GameList-confirm" = "Ja";
+"GameList-cancel" = "Nein";
 
 "AddGame-Title" = "Neues Spiel";
 "AddGame-AddButtonTitle" = "Neues Spiel hinzufügen";

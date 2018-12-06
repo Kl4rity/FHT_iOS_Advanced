@@ -7,11 +7,19 @@
 */
 
 "PlayerList-Title" = "Players";
+"PlayerList-removePlayerTitle" = "Are you sure?";
+"PlayerList-removePlayerMessage" = "Do you really want to remove this player?";
+"PlayerList-confirm" = "Yes";
+"PlayerList-cancel" = "No";
 
 "AddPlayer-Title" = "New Player";
 "AddPlayer-AddButtonTitle" = "Add";
 
 "GameList-Title" = "Games";
+"GameList-removeGameTitle" = "Are you sure?";
+"GameList-removeGameMessage" = "Do you really want to remove this game from the player?";
+"GameList-confirm" = "Yes";
+"GameList-cancel" = "No";
 
 "AddGame-Title" = "Add Game";
 "AddGame-AddButtonTitle" = "Create New Game";

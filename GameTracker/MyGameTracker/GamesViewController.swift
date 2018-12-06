@@ -50,6 +50,7 @@ class GamesViewController : UITableViewController {
     }
     
     func fetchData(){
+        games = [Game]()
         let gamesFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Game")
 //        gamesFetch.predicate = NSPredicate(format:"playedBy == %@", player)
         var allGames = try! managedContext.fetch(gamesFetch) as! [Game]
@@ -65,11 +66,27 @@ class GamesViewController : UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            let game = games[indexPath.row]
-            managedContext.delete(game as! Game)
-            appDelegate.saveContext()
-            fetchData()
+            let game = games[indexPath.row] as! Game
+            displayAlertView(gameToBeRemoved: game, playerToBeRemovedFrom: player)
         }
+    }
+    
+    func displayAlertView(gameToBeRemoved: Game, playerToBeRemovedFrom: Player){
+         let alertController = UIAlertController(title: NSLocalizedString("GameList-removeGameTitle", comment: ""), message: NSLocalizedString("GameList-removeGameMessage", comment: ""), preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: NSLocalizedString("GameList-confirm", comment: ""), style: .default){(action)
+            in
+            gameToBeRemoved.removeFromPlayedBy(playerToBeRemovedFrom)
+            playerToBeRemovedFrom.removeFromPlays(gameToBeRemoved)
+            self.appDelegate.saveContext()
+            self.fetchData()
+        }
+        let noAction = UIAlertAction(title:NSLocalizedString("GameList-cancel", comment: ""), style: .default){(action)
+            in
+            return
+        }
+        alertController.addAction(yesAction)
+        alertController.addAction(noAction)
+        self.present(alertController, animated:true, completion: nil)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -89,20 +106,6 @@ class GamesViewController : UITableViewController {
         cell.game = game as? Game
         
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
-        if editingStyle == .delete {
-            let game = games[indexPath.row]
-            
-            // disassociate player from game
-            // disassociate game from player
-            
-            managedContext.delete(player as! Player)
-            appDelegate.saveContext()
-            fetchData()
-        }
     }
     
 }

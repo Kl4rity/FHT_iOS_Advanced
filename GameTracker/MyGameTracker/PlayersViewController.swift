@@ -43,11 +43,26 @@ class PlayersViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            let player = players[indexPath.row]
-            managedContext.delete(player as! Player)
-            appDelegate.saveContext()
-            fetchData()
+            let player = players[indexPath.row] as! Player
+            displayAlertView(playerToBeRemoved: player)
         }
+    }
+    
+    func displayAlertView(playerToBeRemoved: Player){
+        let alertController = UIAlertController(title: NSLocalizedString("PlayerList-removePlayerTitle", comment: ""), message: NSLocalizedString("PlayerList-removePlayerMessage", comment: ""), preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: NSLocalizedString("PlayerList-confirm", comment: ""), style: .default){(action)
+            in
+            self.managedContext.delete(playerToBeRemoved)
+            self.appDelegate.saveContext()
+            self.fetchData()
+        }
+        let noAction = UIAlertAction(title:NSLocalizedString("PlayerList-cancel", comment: ""), style: .default){(action)
+            in
+            return
+        }
+        alertController.addAction(yesAction)
+        alertController.addAction(noAction)
+        self.present(alertController, animated:true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -59,12 +74,10 @@ class PlayersViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return players.count
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
