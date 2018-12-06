@@ -50,6 +50,14 @@ class PlayersViewController: UITableViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "playerSelected"){
+            var viewController = segue.destination as! GamesViewController
+            var senderCell = sender as! PlayerCell
+            viewController.playerName = senderCell.itemText.text
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return players.count
@@ -61,7 +69,7 @@ class PlayersViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath) as! PlayerCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerCell", for: indexPath) as! PlayerCell
         
         let player = players[indexPath.row]
         cell.player = player as? Player
